@@ -19,6 +19,7 @@
                             <color key="backgroundColor" red="0.12549019607843137" green="0.28627450980392155" blue="0.4392156862745098" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="pingPongSelected" destination="AgC-eL-Hgc" id="9sb-A1-3FD"/>
+                                <segue destination="ot1-Cl-3uA" kind="push" identifier="pingpong" id="nnK-v6-yEF"/>
                             </connections>
                         </button>
                         <button width="1" alignment="left" title="Tennis" id="MTv-MO-dGu">
@@ -32,14 +33,67 @@
                     </items>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="220" y="345"/>
+            <point key="canvasLocation" x="182" y="252"/>
         </scene>
-        <!--Ping Pong Controller-->
-        <scene sceneID="PAQ-Nm-wBx">
+        <!--pingpong-->
+        <scene sceneID="k5o-vg-PFu">
             <objects>
-                <controller id="iaa-Ml-UBK" customClass="PingPongController" customModule="excore_WatchKit_Extension"/>
+                <controller identifier="pingpong" id="ot1-Cl-3uA" customClass="PingPongController" customModule="excore_WatchKit_Extension">
+                    <items>
+                        <group width="1" height="0.40000000000000002" alignment="left" id="g7I-0h-DyH">
+                            <items>
+                                <button width="0.5" height="1" alignment="left" title="0" id="tDB-nV-yAG">
+                                    <color key="backgroundColor" red="0.12549019607843137" green="0.28627450980392155" blue="0.43529411764705883" alpha="1" colorSpace="calibratedRGB"/>
+                                    <fontDescription key="font" type="system" pointSize="34"/>
+                                    <connections>
+                                        <action selector="incrementScoreTeam1" destination="ot1-Cl-3uA" id="R45-3d-EgU"/>
+                                    </connections>
+                                </button>
+                                <button width="0.5" height="1" alignment="left" title="0" id="0rj-vB-UtP">
+                                    <color key="backgroundColor" red="0.95294117647058818" green="0.85490196078431369" blue="0.45098039215686275" alpha="1" colorSpace="calibratedRGB"/>
+                                    <fontDescription key="font" type="system" pointSize="34"/>
+                                    <connections>
+                                        <action selector="incrementScoreTeam2" destination="ot1-Cl-3uA" id="Urf-il-DBE"/>
+                                    </connections>
+                                </button>
+                            </items>
+                        </group>
+                        <group width="1" height="0.029999999999999999" alignment="left" radius="0.0" id="xeD-rT-F00">
+                            <items>
+                                <group width="0.5" height="1" alignment="left" radius="0.0" id="nQ7-fw-74e">
+                                    <color key="backgroundColor" red="1" green="0.065937836999999999" blue="0.080456978260000006" alpha="1" colorSpace="calibratedRGB"/>
+                                </group>
+                                <group width="0.5" height="1" alignment="left" radius="0.0" id="D6V-dL-CkQ">
+                                    <color key="backgroundColor" red="1" green="0.065937836999999999" blue="0.080456978260000006" alpha="1" colorSpace="calibratedRGB"/>
+                                </group>
+                            </items>
+                        </group>
+                        <label width="0.5" alignment="left" text="Me" textAlignment="center" id="fd1-Py-8Cn"/>
+                        <group width="1" alignment="left" id="da5-L5-zIe">
+                            <items>
+                                <button width="0.5" alignment="left" title="Fix" id="CXm-cd-4tz">
+                                    <connections>
+                                        <action selector="fixScoreTeam1" destination="ot1-Cl-3uA" id="AJZ-Xv-7iz"/>
+                                    </connections>
+                                </button>
+                                <button width="0.5" alignment="left" title="Fix" id="LLa-Ov-vNI">
+                                    <connections>
+                                        <action selector="fixScoreTeam2" destination="ot1-Cl-3uA" id="h5r-gV-9ba"/>
+                                    </connections>
+                                </button>
+                            </items>
+                            <edgeInsets key="margins" left="0.0" right="0.0" top="9" bottom="0.0"/>
+                        </group>
+                    </items>
+                    <connections>
+                        <outlet property="scoreTeam1Button" destination="tDB-nV-yAG" id="ABj-67-6Hf"/>
+                        <outlet property="scoreTeam2Button" destination="0rj-vB-UtP" id="M5U-94-475"/>
+                        <outlet property="serviceTeam1" destination="nQ7-fw-74e" id="7gp-hP-usY"/>
+                        <outlet property="serviceTeam2" destination="D6V-dL-CkQ" id="xRa-nv-uFb"/>
+                    </connections>
+                </controller>
             </objects>
-            <point key="canvasLocation" x="468" y="345"/>
+            <point key="canvasLocation" x="488" y="36"/>
         </scene>
         <!--Static Notification Interface Controller-->
         <scene sceneID="AEw-b0-oYE">
